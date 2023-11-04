@@ -75,7 +75,7 @@ public final class SocialNetworkUserImpl<U extends User> extends UserImpl implem
     /*
      * 2) Define a further constructor where the age defaults to -1
      */
-    public SocialNetworkUserImpl(String name, String surname, String user, String firstName, String lastName, String username) {
+    public SocialNetworkUserImpl(final String name, final String surname, final String user, final String firstName, final String lastName, final String username) {
         super(name, surname, user, DEFAULT_AGE);
         this.followedUser = new HashMap<String,Set<U>>();
     }
@@ -88,11 +88,11 @@ public final class SocialNetworkUserImpl<U extends User> extends UserImpl implem
     public boolean addFollowedUser(final String circle, final U user) {
         if (this.followedUser.containsKey(circle)) {
                 this.followedUser.containsKey(circle);
-                Set<U> setLinkedToValue = this.followedUser.get(circle);
+                final Set<U> setLinkedToValue = this.followedUser.get(circle);
                 setLinkedToValue.add(user);
                 this.followedUser.put(circle, setLinkedToValue);
         } else {
-            Set<U> set = new HashSet<U>();
+            final Set<U> set = new HashSet<U>();
             this.followedUser.put(circle, set);
             set.add(user);
         }
@@ -114,14 +114,14 @@ public final class SocialNetworkUserImpl<U extends User> extends UserImpl implem
     }
 
     public List<U> getFollowedUsers() {
-        List<U> list = new ArrayList<>();
+        final List<U> list = new ArrayList<>();
         for (final Set<U> setUser : this.followedUser.values()) {
             list.addAll(setUser);
         }
         return list;
     }
 
-    public boolean add(User e) {
+    public boolean add(final User e) {
         return false;
     }
 }
