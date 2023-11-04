@@ -120,8 +120,4 @@ public final class SocialNetworkUserImpl<U extends User> extends UserImpl implem
         }
         return list;
     }
-
-    public boolean add(final User e) {
-        return false;
-    }
 }
