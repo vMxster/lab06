@@ -13,7 +13,7 @@ import it.unibo.generics.graph.api.VisitStrategy;
 
 public class DFS implements VisitStrategy{
 
-    public List<String> path(Graph<String> graph, String source, String target) {
+    public List<String> path(final Graph<String> graph, final String source, final String target) {
         final Stack<String> stack = new Stack<String>();
         final Map<String,Boolean> visited = new HashMap<String,Boolean>(graph.nodeSet().size());
         mapInitialiser(graph,visited);
@@ -40,14 +40,14 @@ public class DFS implements VisitStrategy{
         return path;
     }
 
-    private void mapInitialiser(Graph<String> graph, Map<String, Boolean> visited) {
-        Set<String> setNode = graph.nodeSet();
+    private void mapInitialiser(final Graph<String> graph, final Map<String, Boolean> visited) {
+        final Set<String> setNode = graph.nodeSet();
         for (String i : setNode) {
             visited.put(i, false);
         }
     }
 
-    private Boolean isEmpty(Stack<String> stack) {
+    private Boolean isEmpty(final Stack<String> stack) {
         return stack.size() == 0;
     }
 

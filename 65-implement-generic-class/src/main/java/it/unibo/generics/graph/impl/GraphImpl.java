@@ -27,12 +27,12 @@ public class GraphImpl implements Graph<String> {
         }
     }
 
-    public void addNode(String node) {
+    public void addNode(final String node) {
         this.nodes.add(node);
         this.adjList.put(node, new ArrayList<>());
     }
 
-    public void addEdge(String source, String target) {
+    public void addEdge(final String source, final String target) {
         if (!adjList.containsKey(source)) {
             addNode(source);
         }
@@ -43,22 +43,22 @@ public class GraphImpl implements Graph<String> {
     }
 
     public Set<String> nodeSet() {
-        Set<String> setNode = new HashSet<>();
+        final Set<String> setNode = new HashSet<>();
         for (final String i : this.nodes) {
             setNode.add(i);
         }
         return setNode;
     }
 
-    public Set<String> linkedNodes(String node) {       // Risolvi Problema per 2nd Test
-        Set<String> setNode = new HashSet<>();
+    public Set<String> linkedNodes(final String node) {       // Risolvi Problema per 2nd Test
+        final Set<String> setNode = new HashSet<>();
         for (final String i : this.adjList.get(node)) {
             setNode.add(i);
         }
         return setNode;
     }
 
-    public List<String> getPath(String source, String target) {
+    public List<String> getPath(final String source, final String target) {
         return this.visitStrategy.path(this, source, target);
     }
     

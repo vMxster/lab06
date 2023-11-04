@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface VisitStrategy {
     
-    List<String> path(Graph<String> graph, String source, String target);
+    List<String> path(final Graph<String> graph, final String source, final String target);
 
 }
