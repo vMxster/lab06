@@ -1,6 +1,7 @@
 package it.unibo.generics.graph;
 
 import it.unibo.generics.graph.api.Graph;
+import it.unibo.generics.graph.impl.GraphImpl;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -10,6 +11,9 @@ import java.util.Set;
  *
  */
 public final class UseGraph {
+
+    private final static Boolean BFS = true;
+    private final static Boolean DFS = false;
 
     private UseGraph() {
     }
@@ -21,8 +25,10 @@ public final class UseGraph {
     public static void main(final String... args) {
         /*
          * Test your graph implementation(s) by calling testGraph
+         * BFS = Activate BFS
+         * DFS = Activate DFS 
          */
-        testGraph(null);
+        testGraph(new GraphImpl(BFS));
     }
 
     private static void testGraph(final Graph<String> graph) {
