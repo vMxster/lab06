@@ -30,7 +30,7 @@ public final class UseListsAndMaps {
          * 1) Create a new ArrayList<Integer>, and populate it with the numbers
          * from 1000 (included) to 2000 (excluded).
          */
-        List<Integer> list1 = new ArrayList<Integer>();
+        final List<Integer> list1 = new ArrayList<Integer>();
         int number = 1000;
         for (int i=0; i<MIN_RANGE ; i++) {
             list1.add(number);
@@ -41,13 +41,13 @@ public final class UseListsAndMaps {
          * without using any looping construct (for, while), populate it with
          * the same contents of the list of point 1.
          */
-        List<Integer> list2 = new LinkedList<Integer>(IntStream.range(MIN_RANGE, MAX_RANGE).boxed().toList());
+        final List<Integer> list2 = new LinkedList<Integer>(IntStream.range(MIN_RANGE, MAX_RANGE).boxed().toList());
         /*
          * 3) Using "set" and "get" and "size" methods, swap the first and last
          * element of the first list. You can not use any "magic number".
          * (Suggestion: use a temporary variable)
          */
-        int temp = list1.get(0);
+        final int temp = list1.get(0);
         list1.set(0, list1.get(list1.size()-1));
         list1.set(list1.size()-1,temp);
         /*
@@ -145,10 +145,10 @@ public final class UseListsAndMaps {
          *
          * Oceania -> 38,304,000
          */
-        Map<String,Integer> map = new HashMap<String,Integer>(Map.of(   "Africa", 1110635000,
+        final Map<String,Integer> map = new HashMap<String,Integer>(Map.of(   "Africa", 1110635000,
                                                                         "Americas", 972005000,
                                                                         "Antarctica", 0,
-                                                                        "Asia", 4300000000,  // Overflow
+                                                                        "Asia", 4300000000,  // Int Overflow
                                                                         "Europe", 742452000,
                                                                         "Oceania", 38304000 ));
         /*
